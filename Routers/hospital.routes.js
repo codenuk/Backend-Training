@@ -5,7 +5,7 @@ const router = express.Router();
 const rooms = [
   {
     id: "1001",
-    date: '2022-01-15T13:16:43.252Z',
+    date: "2022-01-15T13:16:43.252Z",
     chargeNurse: "nurse",
     goalsForToday: "",
     precaution: "",
@@ -32,7 +32,8 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const { id } = req.params;
-  res.json({ id });
+  const payload = req.body;
+  res.json(payload);
 });
 
 router.delete("/:id", (req, res) => {
