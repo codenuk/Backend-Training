@@ -8,9 +8,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-const productsRouter = require('./Routers/product.routes');
+const hospitalRouter = require('./Routers/hospital.routes');
 
-app.use('/product', productsRouter);
+app.use('/hospital', hospitalRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

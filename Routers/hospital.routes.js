@@ -2,40 +2,31 @@ const express = require("express");
 const router = express.Router();
 
 // mock data
-const products = [
+const rooms = [
   {
     id: "1001",
-    name: "Node.js for Beginners",
-    category: "Node",
-    price: 990,
-  },
-  {
-    id: "1002",
-    name: "React 101",
-    category: "React",
-    price: 3990,
-  },
-  {
-    id: "1003",
-    name: "Getting started with MongoDB",
-    category: "MongoDB",
-    price: 1990,
+    date: '2022-01-15T13:16:43.252Z',
+    chargeNurse: "nurse",
+    goalsForToday: "",
+    precaution: "",
+    specialNeeds: "",
+    comment: "",
+    questionAskDoctor: "",
   },
 ];
 
 router.get("/", (req, res) => {
-  res.json(products);
+  res.json(rooms);
 });
 
 router.get("/:id", (req, res) => {
   const { id } = req.params;
-  const result = products.find((product) => product.id === id);
+  const result = rooms.find((product) => product.id === id);
   res.json(result);
 });
 
 router.post("/", (req, res) => {
   const payload = req.body;
-  console.log('payload', payload)
   res.json(payload);
 });
 
@@ -50,5 +41,3 @@ router.delete("/:id", (req, res) => {
 });
 
 module.exports = router;
-
-// docker run -d --name database -p 3306:3306 -v $(pwd):/workdir -e MYSQL_ROOT_PASSWORD=password mysql
