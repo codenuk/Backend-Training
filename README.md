@@ -2,3 +2,4 @@
 - Section node JS With Express
 
 - HTTP Method -> get, post, put, delete
+- use mysql
