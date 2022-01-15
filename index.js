@@ -2,6 +2,21 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
 
+const mysql = require('mysql');
+
+const connectDatabase = mysql.createConnection({
+  host: "192.168.1.110",
+  port: "3306",
+  user: "root",
+  password: "password",
+  database: "product"
+});
+
+connectDatabase.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
