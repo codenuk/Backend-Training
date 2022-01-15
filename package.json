@@ -1,0 +1,22 @@
+{
+  "name": "test-backend-node",
+  "version": "1.0.0",
+  "description": "- Run Node Version 14 - Section node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codenuk/backend-experiment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codenuk/backend-experiment/issues"
+  },
+  "homepage": "https://github.com/codenuk/backend-experiment#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
