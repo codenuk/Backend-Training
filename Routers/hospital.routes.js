@@ -15,7 +15,7 @@ router.get("/:id", (req, res) => {
     `SELECT * FROM mydb.room where id= '${id}'`,
     async function (err, results) {
       if (err) throw err;
-      res.json(results);
+      res.json(results[0]);
     }
   );
 });
@@ -46,6 +46,7 @@ router.put("/:id", (req, res) => {
   const payload = req.body;
 
   payload.date = new Date(payload.date);
+  console.log('payload', payload)
   connection.query(
     `UPDATE mydb.room SET ? WHERE ?`,
     [payload, id],

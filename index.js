@@ -1,5 +1,10 @@
 const express = require('express')
 const app = express()
+
+// Edit Err Cors
+const cors = require('cors')
+app.use(cors())
+
 const bodyParser = require('body-parser');
 
 // parse application/x-www-form-urlencoded
